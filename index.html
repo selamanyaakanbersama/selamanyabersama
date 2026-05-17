@@ -347,6 +347,57 @@ const members = [
 
 const allPhotos = members.flatMap(m => m.photos.map(p => ({...p, member:m.name, color:m.color})));
 
+const BASE_BARENG = "https://raw.githubusercontent.com/selamanyaakanbersama/selamanyabersama/main/foto/bareng";
+
+const barengPhotos = [
+  { name: "WhatsApp Image 2026-05-16 at 06.35.11.jpeg",   label: "✦ from the start",        caption: "dari awal kita udah tau ini beda" },
+  { name: "WhatsApp Image 2026-05-16 at 06.35.12.jpeg",   label: "🤝 loyalty over everything", caption: "setia bukan pilihan, itu kebiasaan kita" },
+  { name: "WhatsApp Image 2026-05-16 at 06.35.12 (2).jpeg", label: "🌊 we ride together",     caption: "satu tenggelam, semua nyemplung" },
+  { name: "WhatsApp Image 2026-05-16 at 06.35.12 (3).jpeg", label: "💫 real ones stay",       caption: "yang asli nggak pernah kemana-mana" },
+  { name: "WhatsApp Image 2026-05-16 at 06.35.13.jpeg",   label: "🔥 perjuangan bareng",      caption: "susah senang, kita hadapin sama-sama" },
+  { name: "WhatsApp Image 2026-05-16 at 06.35.13 (1).jpeg", label: "✨ built different",      caption: "circle ini nggak sembarangan terbentuk" },
+  { name: "WhatsApp Image 2026-05-16 at 06.35.13 (2).jpeg", label: "🫂 always got you",       caption: "nggak pernah ada kata sendirian" },
+  { name: "WhatsApp Image 2026-05-16 at 06.35.14.jpeg",   label: "💛 ketulusan itu langka",   caption: "dan kita nemuin itu di sini" },
+  { name: "WhatsApp Image 2026-05-16 at 06.35.14 (1).jpeg", label: "🛣️ long way to go",      caption: "masih panjang, tapi kita jalan bareng" },
+  { name: "WhatsApp Image 2026-05-16 at 06.35.14 (2).jpeg", label: "⚡ unstoppable",          caption: "tujuh kepala, satu arah" },
+  { name: "WhatsApp Image 2026-05-16 at 20.04.44.jpeg",   label: "🌙 malam yang nggak lupa",  caption: "some nights stay forever" },
+  { name: "WhatsApp Image 2026-05-16 at 20.04.45.jpeg",   label: "💬 cerita yang nggak habis", caption: "topiknya receh tapi rasanya dalam" },
+  { name: "WhatsApp Image 2026-05-16 at 20.04.45 (1).jpeg", label: "🎯 no fake, just real",   caption: "di sini nggak ada yang pura-pura" },
+  { name: "WhatsApp Image 2026-05-16 at 20.04.46.jpeg",   label: "🤌 moment of a lifetime",   caption: "ini bukan kebetulan, ini takdir" },
+  { name: "WhatsApp Image 2026-05-16 at 20.04.46 (1).jpeg", label: "🫶 kebersamaan itu seni", caption: "dan kita masterpiece-nya" },
+  { name: "WhatsApp Image 2026-05-16 at 20.04.48.jpeg",   label: "💪 kita pernah jatuh",      caption: "tapi nggak pernah jatuh sendirian" },
+  { name: "WhatsApp Image 2026-05-16 at 20.04.48 (1).jpeg", label: "✦ chosen family",        caption: "bukan darah, tapi rasa" },
+  { name: "WhatsApp Image 2026-05-16 at 20.04.49.jpeg",   label: "🌟 shine together",         caption: "satu bersinar, semua ikut terang" },
+  { name: "WhatsApp Image 2026-05-16 at 20.04.49 (1).jpeg", label: "🎲 chaos is us",          caption: "kacau, tapi kacaunya indah" },
+  { name: "WhatsApp Image 2026-05-16 at 20.04.50.jpeg",   label: "🕊️ damai itu di sini",     caption: "tempat paling aman adalah kalian" },
+  { name: "WhatsApp Image 2026-05-16 at 20.04.51.jpeg",   label: "🔮 we just know",           caption: "nggak perlu banyak kata buat ngerti" },
+  { name: "WhatsApp Image 2026-05-16 at 20.04.51 (1).jpeg", label: "💥 perjuangan itu nyata", caption: "dan kita buktiin bisa sampai sini" },
+  { name: "WhatsApp Image 2026-05-16 at 20.04.51 (2).jpeg", label: "🌈 after every storm",    caption: "selalu ada kita di ujungnya" },
+  { name: "WhatsApp Image 2026-05-16 at 20.04.52.jpeg",   label: "🤍 pure intentions",        caption: "niat kita cuma satu — bareng" },
+  { name: "WhatsApp Image 2026-05-16 at 20.04.52 (1).jpeg", label: "✦ sampai tua",            caption: "ini bukan fase, ini selamanya" },
+  { name: "WhatsApp Image 2026-05-16 at 20.04.53.jpeg",   label: "🎵 same frequency",         caption: "nggak perlu diatur, kita nyambung aja" },
+  { name: "WhatsApp Image 2026-05-16 at 20.04.53 (1).jpeg", label: "💫 ingat ini selalu",     caption: "momen ini nggak bisa dibeli" },
+  { name: "WhatsApp Image 2026-05-16 at 20.04.53 (2).jpeg", label: "🔥 loyal til the end",    caption: "kesetiaan kita bukan kata-kata" },
+  { name: "WhatsApp Image 2026-05-16 at 20.04.54.jpeg",   label: "🌿 tumbuh bareng",          caption: "kita berkembang, tapi nggak kemana-mana" },
+  { name: "WhatsApp Image 2026-05-16 at 20.04.54 (1).jpeg", label: "⚡ energy nggak bohong",  caption: "ketemu kalian, baterainya full terus" },
+  { name: "WhatsApp Image 2026-05-16 at 20.04.55.jpeg",   label: "🫂 pelukan tanpa kata",     caption: "sometimes presence is enough" },
+  { name: "WhatsApp Image 2026-05-16 at 20.04.55 (1).jpeg", label: "💎 rare kind of bond",    caption: "nggak semua orang seberuntung ini" },
+  { name: "WhatsApp Image 2026-05-16 at 20.04.56.jpeg",   label: "🌙 we survived it all",     caption: "semua yang berat, kita lewatin bareng" },
+  { name: "WhatsApp Image 2026-05-16 at 20.04.56 (1).jpeg", label: "✨ core memory locked",   caption: "ini tersimpan, selamanya" },
+  { name: "WhatsApp Image 2026-05-16 at 20.04.56 (2).jpeg", label: "🎯 no one left behind",   caption: "satu ketinggalan, kita tunggu" },
+  { name: "WhatsApp Image 2026-05-16 at 20.04.57.jpeg",   label: "💛 warm like home",         caption: "di mana kalian, di situ rumah" },
+  { name: "WhatsApp Image 2026-05-16 at 20.04.58.jpeg",   label: "🌊 depth over surface",     caption: "kita bukan basa-basi, kita dalam" },
+  { name: "WhatsApp Image 2026-05-16 at 20.05.00.jpeg",   label: "🔮 sampai tamat fr",        caption: "bukan janji — ini kepastian" },
+  { name: "WhatsApp Image 2026-05-16 at 20.05.01.jpeg",   label: "⚡ seven is the number",    caption: "nggak kurang, nggak lebih — sempurna" },
+  { name: "WhatsApp Image 2026-05-16 at 20.05.02.jpeg",   label: "✦ forever starts here",     caption: "dan ini baru permulaan" },
+].map(p => ({
+  src: `${BASE_BARENG}/${encodeURIComponent(p.name)}`,
+  label: p.label,
+  caption: p.caption,
+  member: "The Seven 🌟",
+  color: "#ff6ec7"
+}));
+
 const polSizes   = ['pol-sm','pol-md','pol-lg','pol-xl','pol-sq','pol-wide','pol-md','pol-lg','pol-sm','pol-xl','pol-sq','pol-md'];
 const polRots    = [-7,-4,-2,1,3,5,-6,2,-3,6,-1,4,-5,3,-2,7,1,-4,-8,5];
 const polTapeRots= [-8,4,-3,6,-5,2,-7,3,-2,5,-4,6];
@@ -391,12 +442,17 @@ function renderMembers(){
 function renderGallery(){
   const grid = document.getElementById('chaosGrid');
   grid.innerHTML='';
-  const sizes=['s22','s12','s11','s21','s11','s12','s11','s22','s11','s21','s12','s11','s11','s22','s12','s11'];
-  allPhotos.slice(0,16).forEach((p,i)=>{
+  const sizes=['s22','s12','s11','s21','s11','s12','s11','s22','s11','s21','s12','s11','s11','s22','s12','s11','s11','s12','s21','s11','s22','s11','s12','s11','s21','s11','s11','s22','s12','s11','s21','s11','s12','s11','s22','s11','s21','s12','s11','s11'];
+  barengPhotos.forEach((p,i)=>{
     const item=document.createElement('div');
     item.className=`chaos-item ${sizes[i%sizes.length]}`;
-    item.innerHTML=`<img src="${p.src}" alt="${p.member}" loading="lazy"/>
-      <div class="chaos-overlay"><span class="chaos-tag">${p.member}</span></div>`;
+    item.innerHTML=`<img src="${p.src}" alt="bareng" loading="lazy"/>
+      <div class="chaos-overlay">
+        <div style="display:flex;flex-direction:column;gap:2px">
+          <span class="chaos-tag">${p.label}</span>
+          <span style="font-size:0.6rem;color:rgba(255,255,255,0.75);font-family:'Space Mono',monospace;padding-left:2px">${p.caption}</span>
+        </div>
+      </div>`;
     item.onclick=()=>openLightbox(p.src);
     grid.appendChild(item);
   });
